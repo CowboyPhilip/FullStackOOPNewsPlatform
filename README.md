@@ -204,8 +204,8 @@ Support for clean versioning via prefixes like `/api/v1`, enabling scalable API 
 ### ✅ 1. Clone the Repository
 
 ```bash
-git clone https://github.com/omsmir/oop-fastapi-backend.git
-cd oop-fastapi-backend
+git clone https://github.com/Omsmir/fastapi-oop-backend.git
+cd fastapi-oop-backend
 ```
 
 ### ✅ 2. Create `.env` File
