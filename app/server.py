@@ -10,6 +10,10 @@ from app.controllers.user import UserController
 class App(ABC):
     app: FastAPI
 
+    # 一个fastapi app实例最重要的功能：实现routes和middlewares
+    # route 例子: xxx.com/api/v1/auth/login
+    # middleware 例子: xxx.com/api/v1/auth/login -> Auth Middleware -> Auth Controller 在这个过程中 对于所有经过该route的请求 进行统一处理 例如logger，鉴权
+    # （route/middlewares）写在另外的类里 这个方法叫模块化 目的是更好地解耦 具体表现是减少main entry的代码量 + 便于复用和修改
     def __init__(self, routes: list[Route]):
         self.app = FastAPI(title=settings.PROJECT_NAME)
         self.app.include_router(auth.Route(UserController()).router)
